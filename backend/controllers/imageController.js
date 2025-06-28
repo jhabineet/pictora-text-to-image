@@ -13,7 +13,7 @@ export const generateImage = async (req, res) => {
         }
 
         if (user.creditBalance <= 0) {
-            return res.status(400).json({ success: false, message: "Insufficient credits", creditBalance: user.creditBalance });
+            return res.json({ success: false, message: "Insufficient credits", creditBalance: user.creditBalance, status: 400 });
         }
 
         const formData = new FormData();
